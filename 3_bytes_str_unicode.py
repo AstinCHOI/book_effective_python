@@ -50,3 +50,4 @@ def to_bytes(unicode_or_str):
 with open('/tmp/random.bin', 'w') as f:
     f.write(os.urandom(10))
 
+# TypeError: must be str, not bytes
