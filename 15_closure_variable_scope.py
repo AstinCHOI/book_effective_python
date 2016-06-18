@@ -32,8 +32,23 @@ print(numbers)
 # [2, 3, 5, 7, 1, 4, 6, 8]
 
 
-# python3
+# python2
 def sort_priority3(numbers, group):
+    found = [False]
+    def helper(x):
+        if x in group:
+            found[0] = True # List: mutable
+            return (0, x)
+        return (1, x)
+    numbers.sort(key=helper)
+    return found[0]
+
+found = sort_priority3(numbers, group)
+print('Found:', found)
+print(numbers)
+
+# python3
+def sort_priority4(numbers, group):
     found = False
     def helper(x):
         nonlocal found
@@ -44,7 +59,7 @@ def sort_priority3(numbers, group):
     numbers.sort(key=helper)
     return found
 
-found = sort_priority3(numbers, group)
+found = sort_priority4(numbers, group)
 print('Found:', found)
 print(numbers)
 # >>>
