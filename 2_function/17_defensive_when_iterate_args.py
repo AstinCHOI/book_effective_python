@@ -19,14 +19,14 @@ def read_visits(data_path):
         for line in f:
             yield int(line)
 
-it = read_visits('example/my_numbers.txt')
+it = read_visits('../example/my_numbers.txt')
 percentages = normalize(it)
 print(percentages)
 # >>>
 # []
 
 
-it = read_visits('example/my_numbers.txt')
+it = read_visits('../example/my_numbers.txt')
 print(list(it))
 print(list(it)) # already consumed
 # >>>
@@ -43,7 +43,7 @@ def normalize_copy(numbers):
         result.append(percent)
     return result
 
-it = read_visits('example/my_numbers.txt')
+it = read_visits('../example/my_numbers.txt')
 percentages = normalize_copy(it)
 print(percentages)
 # >>>
@@ -58,7 +58,7 @@ def normalize_func(get_iter):
         result.append(percent)
     return result
 
-percentages = normalize_func(lambda: read_visits('example/my_numbers.txt'))
+percentages = normalize_func(lambda: read_visits('../example/my_numbers.txt'))
 print(percentages)
 # >>>
 # [11.538461538461538, 26.923076923076923, 61.53846153846154]
@@ -73,7 +73,7 @@ class ReadVisits(object): # iterable container class
             for line in f:
                 yield int(line)
 
-visits = ReadVisits('example/my_numbers.txt')
+visits = ReadVisits('../example/my_numbers.txt')
 percentages = normalize(visits)
 print(percentages)
 # >>>
@@ -94,7 +94,7 @@ def normalize_defensive(numbers):
 
 visits = [15, 35, 80]
 normalize_defensive(visits)
-visits = ReadVisits('example/my_numbers.txt')
+visits = ReadVisits('../example/my_numbers.txt')
 normalize_defensive(visits)
 # >>>
 # [11.538461538461538, 26.923076923076923, 61.53846153846154]

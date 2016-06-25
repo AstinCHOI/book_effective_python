@@ -35,7 +35,7 @@ def index_file(handle):
             if letter == ' ':
                 yield offset
 
-with open('example/address.txt', 'r') as f:
+with open('../example/address.txt', 'r') as f:
     it = index_file(f)
     results = islice(it, 0, 3)
     print(list(results))
