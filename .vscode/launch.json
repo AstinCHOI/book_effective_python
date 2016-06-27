@@ -14,6 +14,19 @@
             ]
         },
         {
+            "name": "Python3",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": true,
+            "program": "${file}",
+            "pythonPath": "/Library/Frameworks/Python.framework/Versions/3.5/bin/python3",
+            "debugOptions": [
+                "WaitOnAbnormalExit",
+                "WaitOnNormalExit",
+                "RedirectOutput"
+            ]
+        },
+        {
             "name": "Python Console App",
             "type": "python",
             "request": "launch",
