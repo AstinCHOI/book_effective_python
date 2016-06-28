@@ -89,7 +89,7 @@ pprint(GoodWay.mro()) # MRO(Method Resolution Order)
 #  <class 'object'>]
 
 
-# for python3
+# for python3, __class__
 class Explicit(MyBaseClass):
     def __init__(self, value):
         super(__class__, self).__init__(value * 2)
