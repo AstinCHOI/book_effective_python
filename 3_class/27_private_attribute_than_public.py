@@ -99,7 +99,7 @@ class ApiClass(object):
 class Child(ApiClass):
     def __init__(self):
         super().__init__()
-        self._value = 'hello'
+        self._value = 'hello' # Conflict
 
 a = Child()
 print(a.get(), 'and', a._value, 'should be different')
