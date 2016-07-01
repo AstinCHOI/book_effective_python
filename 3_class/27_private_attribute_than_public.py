@@ -75,7 +75,7 @@ class MyClass(MyBaseClass):
 
 class MyIntegerSubclass(MyClass):
     def get_value(self):
-        return int(self._MyClass__value) # Okay for self._MyBaseClass__value 
+        return int(self._MyClass__value) # OK - self._MyBaseClass__value 
 
 foo = MyIntegerSubclass(5)
 # foo.get_value() # AttributeError
@@ -98,7 +98,7 @@ class ApiClass(object):
 
 class Child(ApiClass):
     def __init__(self):
-        super().__init__()
+        super(Child, self).__init__()
         self._value = 'hello' # Conflict
 
 a = Child()
@@ -116,7 +116,7 @@ class ApiClass(object):
 
 class Child(ApiClass):
     def __init__(self):
-        super().__init__()
+        super(Child, self).__init__()
         self._value = 'hello' # OK!
 
 a = Child()
