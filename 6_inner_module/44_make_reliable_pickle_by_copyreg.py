@@ -1,7 +1,7 @@
 
 ## In Design View
-# pickle: unreliable (recommend to use it simply) 
-# json: reliable
+# pickle: unreliable among reliable programs (recommend to use it simply)
+# json: reliable among unreliable programs
 
 class GameState(object):
     def __init__(self):
